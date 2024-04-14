@@ -7,7 +7,7 @@ permalink: /DataViewer/
 <div class="container-fluid">
   <div class="row">
   <div class="col-xs-12">
-  <iframe src="http://127.0.0.1:8080" class="rounded-iframe" width="100%" height="1200" frameborder="0" ></iframe>
+  <iframe src="https://tomcxf.github.io/Cirro_react/" class="rounded-iframe" width="100%" height="1200" frameborder="0" ></iframe>
   </div>
   </div>
 </div>
