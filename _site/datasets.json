@@ -1,0 +1,12 @@
+[
+    {
+        "id": "Amygdala",
+        "name": "Amygdala",
+        "url": "Amygdala_raw/Amygdala_raw.jsonl"
+    },
+    {
+        "id": "pbmc3k",
+        "name": "pbmc3k",
+        "url": "pbmc3k_no_raw/pbmc3k_no_raw.jsonl"
+    }
+]

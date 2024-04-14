@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GZNL-RDC - Database</title>
+  <meta name="description" content=" The Databases in RNAcentre, GZNL-RDC. ">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/database/">
+<link rel="shortcut icon" type ="image/x-icon" href="http://localhost:4000/images/favicon.ico">
+
+
+
+</head>
+
+
+  <body>
+
+    <div class="navbar-expand-lg navbar-dark" style='background-color: #333333; border-radius: 0; margin-bottom: 0; border: 0; height: 30px;' role="navigation">
+  <div class="container-fluid" style='height: 30px; max-width: 1000px;'>
+	  <ul class="nav navbar-nav navbar-right" style='height: 30px;'>
+		<li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="http://localhost:4000/">
+			<img src="http://localhost:4000/images/header/home.svg" style='height: 20px; width: auto; margin: 0;'>
+			Home</a></li>
+		<li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="http://localhost:4000/database">
+			<img src="http://localhost:4000/images/header/database.svg" style='height: 20px; width: auto; margin: 0;'>
+			Database</a></li>
+		<li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="http://localhost:4000/research">
+			<img src="http://localhost:4000/images/header/research.svg" style='height: 20px; width: auto; margin: 0;'>
+			Research</a></li>
+		<li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="http://localhost:4000/aboutus">
+			<img src="http://localhost:4000/images/header/aboutus.svg" style='height: 20px; width: auto; margin: 0;'>
+			About us</a></li>
+		<li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://gzlab.ac.cn/">
+			GZNL-RDC
+			<img src="http://localhost:4000/images/header/gznl2.svg" style='height: 20px; width: auto; margin: 0;'>
+			</a></li>
+	  </ul>
+  </div>
+</div>
+
+<!--
+  <div class="search-container">
+    <p class="search-text">Search for something:</p>
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+    </div>
+    <p class="additional-text">Additional text here...</p>
+  </div>
+
+  <div class="background-image">
+    <img src="http://localhost:4000/images/Picture-1.jpg" style='width: 100%; border-radius: 0; margin-top: 0; margin-bottom: 0;'>
+  </div>
+-->
+
+<div class="full-width-image">
+  <img src="http://localhost:4000/images/homePage/Background.png" class="img-fluid" alt="Responsive image">
+</div>
+
+<style>
+	.full-width-image {
+	  background-color: #EC7102; /* 设置背景颜色为黄色 */
+	  display: flex;
+	  justify-content: flex-end; /* 图片右对齐 */
+	}
+	
+	.full-width-image img {
+	  height: 300px;
+	  border-radius: 0;
+	  margin-top: 0;
+	  margin-bottom: 0;
+	}
+</style>
+
+<div class="navbar navbar-expand-lg navbar-dark bg-primary" style='border-radius: 0; border: 0;' role="navigation">
+
+  <div class="container-fluid" style='max-width: 1200px;'>
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	
+    <a class="navbar-brand" href="http://localhost:4000/">
+		
+		<img class="navbar-brand" src="http://localhost:4000/images/header/logo.svg" style='height:50px;margin-top:-14px;margin-bottom:0;padding:2px 2px;border-radius: 0;' alt="logo">
+		<b style='font-size: 32px; color: #eeeeee;'>Ribocentre</b>
+	</a>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a class="nav-link-1" href="http://localhost:4000/"><b>Home</b></a></li>
+		<li><a class="nav-link-1" href="http://localhost:4000/dataviewer"><b>Data Viewer</b></a></li>
+		<li><a class="nav-link-1" href="http://localhost:4000/portrait"><b>Portrait</b></a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle nav-link-1" data-toggle="dropdown">
+				<b>Gene</b> <span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="nav-link-1" style="color: #BF5701;" href="http://localhost:4000/Markers"><b>Markers</b></a></li>
+				<li><a class="nav-link-1" style="color: #BF5701;" href="http://localhost:4000/RegionDEG"><b>Region DEG</b></a></li>
+				<li><a class="nav-link-1" style="color: #BF5701;" href="http://localhost:4000/CellTypeDEG"><b>CellType DEG</b></a></li>
+			</ul>
+		<li><a class="nav-link-1" href="http://localhost:4000/exploration"><b>Exploration</b></a></li>
+		<li><a class="nav-link-1" href="http://localhost:4000/database"><b>Database</b></a></li>
+		<li><a class="nav-link-1" href="http://localhost:4000/Helps"><b>Help</b></a></li>
+		<li><a class="nav-link-1" href="http://localhost:4000/contact"><b>Contact</b></a></li>
+	  </ul>
+	</div>
+  </div>
+</div>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="textid" class="col-sm-12">
+  <html lang="en">
+<head>
+<!--set sort order in table header begin-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <!-- <title>Ribozyme applications</title> -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" />
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <!--set sort order in table header finish-->
+  <!-- <style>
+    .header_box {
+    border: none;
+    background: #efefef;
+    font-size:24px
+  }
+  h2{
+    font-size:20px;
+    font-weight: bold;
+  }
+/* Button Container Styles */
+    .button-container {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      height: 50px;
+      overflow:auto
+    }
+    /* Button Style */
+    .button {
+      display: block;
+      padding: 10px;
+      margin-right: 10px;
+      text-align: center;
+      background-color: #efefef;
+      color: #005826;
+      text-decoration: none;
+      font-size: 16px;
+      border: 1px solid #005826;
+      border-radius: 5px;
+    }
+    /* Mouse Hover Style */
+    .button:hover {
+      background-color: #999;
+      cursor: pointer;
+    }
+    /* 样式表格 */
+    table {
+        border: 2px solid #f8f8ff;
+        border: 2px solid #767676;
+		    border: 2px solid #767676;
+		    border-radius: 5px;
+		    background-color: #fff;
+		    border-radius: 0;
+        }
+		  th {
+        background-color: #719B71;
+        background-color: #719B71;
+        background-color: #005826;
+        color: rgba(255,255,255,0.9);
+		    cursor: pointer;
+        }
+		  td {
+		    background-color: #ffffff;
+		    background-color: #f9f9f9;
+		    background-color: #f9f9f9;
+		    }		
+		  th, td {
+		  padding: 10px 10px;
+		}
+    /* 隐藏所有 sheet */
+    .sheet {
+      display: none;
+      overflow:auto
+    }
+    /* Style the search box */
+  #searchBox {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+  }
+  /* Style the search box when it has focus */
+  #searchBox:focus {
+    outline: none;
+    border-color: #2354C4;
+  }
+  /* Style the placeholder text */
+  #searchBox::placeholder {
+    font-size: 16px;
+  }
+  /* 搜索框和下载框水平布局 */
+    .form-container {
+      display: flex;
+      align-items: center;
+      overflow:auto
+    }
+    .form-container input {
+      margin-right: 10px;
+    }
+    /* 下载框位置设置 */
+    .form-container select {
+      margin-left: auto;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      width: 300px;
+    }
+    .button.clicked {
+    background-color: #999;
+}
+
+<!--   </style> -->
+</head> 
+
+<!-- <body onload="showSheet('sheet1')"> -->
+<!-- 
+<p class="header_box" >Detail information</p>
+
+        
+This section lists all the experimentally validated riboswitches. -->
+<div style="text-align: right;">
+<input type="text" id="searchBox" placeholder="Search by keyword..." onfocus="showAllSheets()" oninput="searchTables()" /><br /><br />
+</div>
+<div>
+<table id="cfttable" class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th onclick="sortTable(0)">Name</th>
+            <th onclick="sortTable(1)">Ligand</th>
+            <th onclick="sortTable(2)">Description</th>
+            <th onclick="sortTable(3)">Discovery</th>
+            <th onclick="sortTable(4)">Rfam-name</th>
+            <th onclick="sortTable(5)">Rfam-ID</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td name="td0"><a href="https://ribocentre-switch.github.io/docs/Cobalamine" target="_blank"><b>AdoCbl</b></a></td>
+            <td name="td1">Adenosylcobalamin</td>
+            <td name="td2">Cobalamin riboswitch is a cis-regulatory element which is widely distributed in 5' untranslated regions of cobalamin related genes in bacteria to regulate adjacent genes related to cobalamin metabolism in response to cobalamin binding. Cobalamin riboswitches are broadly classified by the identity of the aptamer</td><td name="td3"><a href=" https://pubmed.ncbi.nlm.nih.gov/10852957/" target="_blank"><b>2020</b> </a></td>
+            <td name="td4"> AdoCbl riboswitch Cobalamin riboswitch<br /></td>
+            <td name="td5">RF01482 RF00174</td>
+        </tr>
+
+        <tr>
+            <td name="td0"><a href="12345" target="_blank"><b>A2</b></a></td>
+            <td name="td1">B2</td>
+            <td name="td2">6666</td><td name="td3"><a href=" http://10.122" target="_blank"><b> CCC 20202</b> </a></td>
+            <td name="td4"> DDD2 DDD-12<br /></td>
+            <td name="td5">None</td>
+        </tr>
+
+        <tr>
+            <td name="td0"><a href="12345" target="_blank"><b>A3</b></a></td>
+            <td name="td1">B3</td>
+            <td name="td2">6666</td><td name="td3"><a href=" http://10.123" target="_blank"><b> CCC 20203</b> </a></td>
+            <td name="td4"> DDD3 DDD-13<br /></td>
+            <td name="td5">None</td>
+        </tr> 
+      </tbody>
+    </table>
+</div>                
+<script>
+  var tables = [];
+    var currentSheet = 'sheet1';
+     $(document).ready(function() {
+    $.noConflict();
+    tables.push($('#cfttable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+
+    tables.push($('#rnadetable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+
+    tables.push($('#rnapretable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#smtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#eletable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+
+
+    
+    tables.push($('#amintable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#sugtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#tboxtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#othtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    
+    
+    // Hide the search box for DataTables
+      $('#cfttable_filter').css('display', 'none');
+      $('#rnadetable_filter').css('display', 'none');
+      $('#rnapretable_filter').css('display', 'none');
+       $('#smtable_filter').css('display', 'none');
+      $('#eletable_filter').css('display', 'none');
+      $('#amintable_filter').css('display', 'none');
+      $('#sugtable_filter').css('display', 'none');
+      $('#tboxtable_filter').css('display', 'none');
+      $('#othtable_filter').css('display', 'none');
+      
+      // Show the initial sheet (sheet1) and hide others
+    showSheet('sheet1');
+    hideAllSheetsExcept('sheet1');
+  });
+
+  function sortTable(columnIndex) {
+    // TODO: Add sorting logic based on the columnIndex
+  }
+
+  
+
+function downloadExcel() {
+  var selectElement = document.getElementById('downloadOptions');
+  var selectedValue = selectElement.value;
+
+  // Check if a valid option was selected
+  if (selectedValue !== '') {
+    // Create a temporary link element with the download URL
+    var link = document.createElement('a');
+    link.href = selectedValue;
+    link.download = selectedValue.split('/').pop(); // Set the filename to the last part of the URL
+    document.body.appendChild(link);
+
+    // Trigger a click event on the link to start the download
+    link.click();
+
+    // Remove the link from the DOM
+    document.body.removeChild(link);
+  }
+}
+	
+	
+	function showSheet(sheetId) {
+    // Hide the current sheet
+    if (currentSheet) {
+        var currentSheetElement = document.getElementById(currentSheet);
+        currentSheetElement.style.display = 'none';
+    }
+
+    // Show the selected sheet
+    var sheet = document.getElementById(sheetId);
+    sheet.style.display = 'block';
+
+    // Update the current sheet
+    currentSheet = sheetId;
+
+    // Get all buttons
+    var buttons = document.querySelectorAll('.button');
+
+    // Remove clicked class from all buttons
+    buttons.forEach(function(btn) {
+        btn.classList.remove('clicked');
+    });
+
+    // Add clicked class to the clicked button using event.target
+    event.target.classList.add('clicked');
+}
+
+  function hideAllSheetsExcept(sheetId) {
+    var sheets = document.getElementsByClassName('sheet');
+    for (var i = 0; i < sheets.length; i++) {
+      var sheet = sheets[i];
+      if (sheet.id !== sheetId) {
+        sheet.style.display = 'none';
+      }
+    }
+    }
+
+    function showAllSheets() {
+      var sheets = document.getElementsByClassName('sheet');
+      for (var i = 0; i < sheets.length; i++) {
+        sheets[i].style.display = 'block';
+      }
+    }
+
+    function searchTables() {
+      var keyword = $('#searchBox').val().toLowerCase();
+
+      tables.forEach(function(table) {
+        table.search(keyword).draw();
+      });
+      // Filter the sheets based on search results
+    filterSheets();
+  }
+
+  function filterSheets() {
+    var keyword = $('#searchBox').val().toLowerCase();
+    var sheets = document.getElementsByClassName('sheet');
+
+    for (var i = 0; i < sheets.length; i++) {
+      var sheet = sheets[i];
+      var table = tables[i];
+
+      var displaySheet = false;
+
+      table.rows().eq(0).each(function(index) {
+        var row = table.row(index);
+        var rowData = row.data().join(' ').toLowerCase();
+        var display = rowData.includes(keyword) ? '' : 'none';
+        row.nodes().to$().css('display', display);
+
+        if (display !== 'none') {
+          displaySheet = true;
+        }
+      });
+
+      if (displaySheet) {
+        $('#' + sheet.id).show();
+      } else {
+        $('#' + sheet.id).hide();
+      }
+    }
+  }  
+  </script>      
+</html>
+
+</div>
+
+      </div>
+    </div>
+
+    <div id="footer" class="panel">
+  <div class="panel-footer" style='background-color: #333333; color: #eeeeee;'>
+	<div class="container-fluid">
+	  <div class="row">
+		<div class="col-sm-4">
+			
+		  <p>&copy 2024 GZNL-RDC. </p>
+		  <p>We are part of the <a href="https://gzlab.ac.cn">Guangzhou Laboratory</a> and <a href="http://www.rnacentre.org/">RNAcentre</a>.</p>
+		  <p>Site made with <a href="https://jekyllrb.com">Jekyll</a>;  <a href="http://localhost:4000/aboutwebsite.html">copy and  modify it for your own research group.</a></p>
+		  <p>  </p>
+		  <p>  </p>
+		</div>
+		
+		<div class="col-sm-4">
+		  Funding:<br />
+          - <a href="https://gzlab.ac.cn">R&D Programs of Guangzhou Laboratory</a><br />
+          - <a href="http://www.most.gov.cn/">MOST IT+BT projects</a> <br />
+          - <a href="https://www.nsfc.gov.cn/">NSFC</a> <br />	  
+		</div>
+		
+		<div class="col-sm-4">
+		  Contact:<br />
+		  Building B2, Guangzhou National Laboratory<br />
+		  96 Xingdao South Road, Guangzhou International Bio Island, <br />
+		  Haizhu District, Guangzhou, Guangdong, China.<br />
+          (<a href="https://goo.gl/maps/hDLr6siEAS2Eaypt8">Maps</a>)
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://localhost:4000/js/bootstrap.min.js"></script>
+
+
+  </body>
+
+</html>
