@@ -4,6 +4,7 @@ layout: piclay
 excerpt: "Ribo centre -- Data Viewer"
 permalink: /DataViewer/
 ---
+<h1>Hello</h1>
 <div class="container-fluid">
   <div class="row">
   <div class="col-xs-12">
