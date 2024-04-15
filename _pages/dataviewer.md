@@ -2,7 +2,7 @@
 title: "Ribo centre - Data Viewer"
 layout: piclay
 excerpt: "Ribo centre -- Data Viewer"
-permalink: /DataViewer/
+permalink: /dataviewer/
 ---
 <h1>Hello</h1>
 <div class="container-fluid">
