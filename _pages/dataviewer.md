@@ -4,11 +4,10 @@ layout: piclay
 excerpt: "Ribo centre -- Data Viewer"
 permalink: /dataviewer/
 ---
-<h1>Hello</h1>
 <div class="container-fluid">
   <div class="row">
   <div class="col-xs-12">
-  <iframe src="https://tomcxf.github.io/Cirro_react/" class="rounded-iframe" width="100%" height="1200" frameborder="0" ></iframe>
+  <iframe src="https://tomcxf.github.io/Cirro_react/build/" class="rounded-iframe" width="100%" height="1200" frameborder="0" ></iframe>
   </div>
   </div>
 </div>
