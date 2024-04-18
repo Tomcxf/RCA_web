@@ -1,8 +1,8 @@
 ---
-title: "Ribo centre - RegionDEG"
+title: "Ribo centre - CellTypeDEG"
 layout: homelay
-excerpt: "Ribo centre -- RegionDEG"
-permalink: /regiondeg/
+excerpt: "Ribo centre -- CellTypeDEG"
+permalink: /celltypedeg/
 ---
 <div class="container">
 <p>ATLAS</p>
@@ -123,7 +123,7 @@ Nose and pharynx
 
 
 <div class="container">
-  <h2>REGION</h2>
+  <h2>Cell Type</h2>
   <select id="selectBox1" onchange="handleSelectChange()"></select>
   <button onclick="displaySelectedImage()">显示选择的照片</button>
 </div>
@@ -152,7 +152,7 @@ Nose and pharynx
     selectedImageId = imageId;
     selectedOptions = [];
 
-    fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/RegionDEG.json')
+    fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/CellTypeDEG.json')
       .then(response => response.json())
       .then(data => {
         var options = data[imageId];
@@ -174,7 +174,7 @@ Nose and pharynx
   function displaySelectedImage() {
   if (selectedImageId !== null && selectedOptions.length === 1) {
     var imageName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '.png';
-    var imagePath = 'https://data.braincellatlas.org/volcano/RegionDEG/' + imageName;
+    var imagePath = 'https://data.braincellatlas.org/volcano/CellTypeDEG/' + imageName;
     // 在此处显示照片，例如：
     var imageElement = document.getElementById('selectedImage');
     imageElement.src = imagePath;

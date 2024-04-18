@@ -4,20 +4,6 @@ layout: homelay
 excerpt: "Ribo centre -- Markers"
 permalink: /markers/
 ---
-<!-- <head>
-<script src="https://cdn.plot.ly/plotly-2.30.0.min.js" charset="utf-8"></script>
-</head>
-
-<div id="tester" style="width:600px;height:250px;"></div>
-
-<script>
-	TESTER = document.getElementById('tester');
-	Plotly.newPlot( TESTER, [{
-	x: [1, 2, 3, 4, 5],
-	y: [1, 2, 4, 8, 16] }], {
-	margin: { t: 0 } } );
-</script> -->
-
 <div class="container">
 <p>ATLAS</p>
 <div class="row">
@@ -78,14 +64,55 @@ Nose and pharynx
 
 </div>
 </div>
+<br/>
+<div class="container">
+  <button id="buttonA" onclick="changeOrder('A')">By Region</button>
+  <button id="buttonB" onclick="changeOrder('B')">By CellType</button>
+  <br/>
+  <select id="selectBox1" onchange="handleSelectChange()"></select>
+  <select id="selectBox2" onchange="handleSelectChange()"></select>
+  <button onclick="displaySelectedImage();displaySelectedTable();">显示选择的照片</button>
+</div>
 
-<button id="buttonA" onclick="changeOrder('A')">A</button>
-<button id="buttonB" onclick="changeOrder('B')">B</button>
-<select id="selectBox1" onchange="handleSelectChange()"></select>
-<select id="selectBox2" onchange="handleSelectChange()">
+<style>
+  /* 设置固定宽度 */
+  #selectBox1, #selectBox2 {
+    width: 400px; /* 这里可以根据需要调整宽度 */
+  }
+</style>
 
-<button onclick="displaySelectedImage();displaySelectedTable();">显示选择的照片</button>
+
+<!-- <button onclick="displaySelectedImage();displaySelectedTable();">显示选择的照片</button> -->
+<br/>
+<div class="container">
+<div class="image-container">
 <img id="selectedImage" src="" alt="Selected Image">
+</div>
+
+<!-- <div class="container">
+<div class="row" >
+<div class="image-container">
+<img id="selectedImage" src="" alt="Selected Image">
+</div>
+</div>
+</div> -->
+<style>
+  .image-container {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
+
 
 
 <div id="csvTableContainer"></div>
@@ -160,60 +187,17 @@ function displaySelectedImage() {
   }
 }
 
-/* function displaySelectedTable() {
-  if (selectedImageId !== null && selectedOptions.length === 2) {
-    var tableName;
-    if (selectedButton === 'A') {
-      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '.csv';
-    var tablePath = 'https://data.braincellatlas.org/volcano/VolcanoByRegion/' + tableName;
-    } else if (selectedButton === 'B') {
-      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[1]) + '_' + encodeURIComponent(selectedOptions[0]) + '.csv';
-    var tablePath = 'https://data.braincellatlas.org/volcano/VolcanoByCellType/' + tableName;
-    }
-    else {
-    console.log('Please select an image and options.');
-  }
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', csvFilePath, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        var csvData = xhr.responseText;
-        var tableContainer = document.getElementById('csvTableContainer');
-
-        // 解析 CSV 数据
-        var rows = csvData.split('\n');
-        var tableHtml = '<table>';
-        for (var i = 0; i < rows.length; i++) {
-          var cells = rows[i].split(',');
-          tableHtml += '<tr>';
-          for (var j = 0; j < cells.length; j++) {
-            if (i === 0) {
-              tableHtml += '<th>' + cells[j] + '</th>';
-            } else {
-              tableHtml += '<td>' + cells[j] + '</td>';
-            }
-          }
-          tableHtml += '</tr>';
-        }
-        tableHtml += '</table>';
-
-        // 将表格插入到页面中
-        tableContainer.innerHTML = tableHtml;
-      }
-    };
-    xhr.send();
-} */
 function displaySelectedTable() {
   if (selectedImageId !== null && selectedOptions.length === 2) {
     var tableName;
     var tablePath;
 
     if (selectedButton === 'A') {
-      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '.csv';
-      tablePath = 'https://data.braincellatlas.org/volcano/VolcanoByRegion/' + tableName;
+      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '_cell_type.csv';
+      tablePath = 'https://data.braincellatlas.org/markersByRegion/' + tableName;
     } else if (selectedButton === 'B') {
-      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[1]) + '_' + encodeURIComponent(selectedOptions[0]) + '.csv';
-      tablePath = 'https://data.braincellatlas.org/volcano/VolcanoByCellType/' + tableName;
+      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[1]) + '_' + encodeURIComponent(selectedOptions[0]) + '_cell_type.csv';
+      tablePath = 'https://data.braincellatlas.org/markersByCellType/' + tableName;
     } else {
       console.log('Please select an image and options.');
       return; // 结束函数的执行
@@ -280,8 +264,8 @@ function displaySelectedTable() {
       originalOrder = false;
       resetSelectBoxes();
     }
-  }
-
+ } 
+  
   function resetSelectBoxes() {
     if (originalOrder) {
       selectBox1.parentNode.insertBefore(selectBox1, selectBox2);

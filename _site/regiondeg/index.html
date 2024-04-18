@@ -118,33 +118,51 @@
     <div class="container-fluid">
       <div class="row">
           <div id="homeid" class="col-sm-12">
-	<div style="text-align:center;">
-  <h3 style="font-size:50px; font-weight:bold;">ATLAS</h3>
-</div>
-<p><br /></p>
-
-<div class="container">
+	<div class="container">
+  <p>ATLAS</p>
   <div class="row">
-    <div class="col-lg-4 text-center">
-      <div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-        <p><a href="#" onclick="showImage0('http://localhost:4000/images/homePage/Adult.png'); return false">
-<img src="http://localhost:4000/images/homePage/nose-pharynx.png" class="rounded-circle" />
-</a></p>
+
+    <div class="col-lg-3 text-center">
+      <div class="img-circle card photo-card card-clickable" onclick="handleClick('Adult',this)">
+        <p><img src="http://localhost:4000/images/homePage/nose-pharynx.png" class="rounded-circle" /></p>
       </div>
       <div>
         <p class="text-center" style="margin-top: 16px;">
 <b style="font-size: 24px;">
-<a href="#" onclick="showImage0('http://localhost:4000/images/homePage/Adult.png'); return false">Nose and pharynx</a>
+Nose and pharynx
 </b>
 </p>
       </div>
     </div>
 
-    <div class="col-lg-4 text-center">
-      <div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-        <p><a href="#" onclick="showImage0('http://localhost:4000/images/homePage/Fetal.png'); return false">
-<img src="http://localhost:4000/images/homePage/airway.png" class="rounded-circle" />
-</a></p>
+    <div class="col-lg-3 text-center">
+      <div class="img-circle card photo-card card-clickable" onclick="handleClick('Fetal',this)">
+        <p><img src="http://localhost:4000/images/homePage/airway.png" class="rounded-circle" /></p>
+      </div>
+      <div>
+        <p class="text-center" style="margin-top: 16px;">
+<b style="font-size: 24px;">
+<a href="#" onclick="showImage0('http://localhost:4000/images/homePage/Fetal.png'); return false">Airway</a>
+</b>
+</p>
+      </div>
+    </div>
+    <div class="col-lg-3 text-center">
+      <div class="img-circle card photo-card card-clickable" onclick="handleClick('Organoid',this)">
+        <p><img src="http://localhost:4000/images/homePage/lung.png" class="rounded-circle" /></p>
+      </div>
+      <div>
+        <p class="text-center" style="margin-top: 16px;">
+<b style="font-size: 24px;">
+<a href="#" onclick="showImage0('http://localhost:4000/images/homePage/Tumour.png'); return false">Lung</a>
+</b>
+</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 text-center">
+      <div class="img-circle card photo-card card-clickable" onclick="handleClick('Tumour',this)">
+        <p><img src="http://localhost:4000/images/homePage/airway.png" class="rounded-circle" /></p>
       </div>
       <div>
         <p class="text-center" style="margin-top: 16px;">
@@ -155,41 +173,9 @@
       </div>
     </div>
 
-    <div class="col-lg-4 text-center">
-      <div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-        <p><a href="#" onclick="showImage0('http://localhost:4000/images/homePage/Tumour.png'); return false">
-<img src="http://localhost:4000/images/homePage/lung.png" class="rounded-circle" />
-</a></p>
-      </div>
-      <div>
-        <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('http://localhost:4000/images/homePage/Tumour.png'); return false">Lung</a>
-</b>
-</p>
-      </div>
-    </div>
   </div>
 </div>
 
-<p><br /><br /><br /></p>
-
-<div class="container">
-  <div class="row">
-    <div class="image-container">
-      <p><img id="photo" src="http://localhost:4000/images/homePage/Adult.png" alt="Default Photo" style="max-height: 450px;" /></p>
-    </div>
-  </div>
-</div>
-
-<h3>Cite us </h3>
-<p>Chen, Xinyue &amp; Huang, Yin &amp; Huang, Ziliang &amp; Xu, Lahong &amp; Huang, Liangfeng &amp; Ye, Mingli &amp; You, Renke &amp; Zhang, Xuegong &amp; Miao, Zhichao*. (2023). Brain Cell Atlas: An Integrative Ensemble of Cell Transcriptomes Across Human Brain Regions. 10.21203/rs.3.rs-3221500/v1.</p>
-
-<!-- <script>
-    function handleClick(card) {
-        card.classList.toggle("clicked");
-    }
-</script> -->
 <script>
   function showImage0(photoName) {
     var photoElement = document.getElementById('photo');
@@ -243,16 +229,75 @@
     }
 </style>
 
+<div class="container">
+  <h2>REGION</h2>
+  <p><select id="selectBox1" onchange="handleSelectChange()"></select>
+  <button onclick="displaySelectedImage()">显示选择的照片</button></p>
+</div>
+
+<!-- <div class="container">
+<div class="image-container"> -->
+<p><img id="selectedImage" src="" alt="Selected Image" />
+<!-- </div> --></p>
+
 <script>
+  var selectedImageId = null;
+  var selectedOptions = [];
+  var selectedButton = null;
+  var selectBox1 = document.getElementById('selectBox1');
+  var originalOrder = true;
   var clickedCard = null;
 
-  function handleClick(card) {
+  function handleClick(imageId,card) {
     if (clickedCard !== null) {
-      clickedCard.classList.remove("clicked");
-    }
-
+    clickedCard.classList.remove("clicked");
+  }
     card.classList.add("clicked");
     clickedCard = card;
+    selectedImageId = imageId;
+    selectedOptions = [];
+
+    fetch('http://localhost:4000/js/genepage/RegionDEG.json')
+      .then(response => response.json())
+      .then(data => {
+        var options = data[imageId];
+        updateSelectBoxOptions('selectBox1', options);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+  }
+
+  function handleSelectChange() {
+    var selectBox1 = document.getElementById('selectBox1');
+    var option1 = selectBox1.options[selectBox1.selectedIndex].value;
+
+    selectedOptions = [option1];
+  }
+
+  function displaySelectedImage() {
+  if (selectedImageId !== null && selectedOptions.length === 1) {
+    var imageName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '.png';
+    var imagePath = 'https://data.braincellatlas.org/volcano/RegionDEG/' + imageName;
+    // 在此处显示照片，例如：
+    var imageElement = document.getElementById('selectedImage');
+    imageElement.src = imagePath;
+    console.log('Selected Image:', imagePath);
+  } else {
+    console.log('Please select an image and options.');
+  }
+}
+  function updateSelectBoxOptions(selectBoxId, options) {
+    var selectBox = document.getElementById(selectBoxId);
+    selectBox.innerHTML = generateOptionsHtml(options);
+  }
+  function generateOptionsHtml(options) {
+    var optionsHtml = '';
+    for (var i = 0; i < options.length; i++) {
+      optionsHtml += '<option value="' + options[i] + '">' + options[i] + '</option>';
+    }
+    return optionsHtml;
   }
 </script>
 
