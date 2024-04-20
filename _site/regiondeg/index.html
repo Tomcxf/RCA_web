@@ -234,13 +234,24 @@ Nose and pharynx
   <p><select id="selectBox1" onchange="handleSelectChange()"></select>
   <button onclick="displaySelectedImage()">显示选择的照片</button></p>
 </div>
+<style>
+  /* 设置固定宽度 */
+  #selectBox1 {
+    width: 400px; /* 这里可以根据需要调整宽度 */
+  }
+</style>
 
 <!-- <div class="container">
 <div class="image-container"> -->
-<p><img id="selectedImage" src="" alt="Selected Image" />
-<!-- </div> --></p>
 
-<script>
+<div class="container">
+  <div class="image-container">
+    <p><img id="selectedImage" src="" alt="Selected Image" /></p>
+  </div>
+  <!-- <img id="selectedImage" src="" alt="Selected Image"> -->
+  <!-- </div> -->
+
+  <script>
   var selectedImageId = null;
   var selectedOptions = [];
   var selectedButton = null;
@@ -301,6 +312,7 @@ Nose and pharynx
   }
 </script>
 
+</div>
 
   </div>
 

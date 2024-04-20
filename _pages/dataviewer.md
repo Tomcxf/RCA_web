@@ -8,7 +8,7 @@ permalink: /dataviewer/
 <div class="container-fluid">
   <div class="row">
   <div class="col-xs-12">
-  <iframe src="https://tomcxf.github.io/Cirro/build/"></iframe>
+  <iframe src="https://tomcxf.github.io/Cirro/build/" class="rounded-iframe" width="100%" height="1200" frameborder="0"></iframe>
   </div>
   </div>
 </div>
