@@ -217,12 +217,9 @@ permalink: /portrait/
       <img src="../assets/lung/线.png" usemap="#Map" id="imgMap" />
       <map name="Map" id="Map">
         <!-- Nose -->
-      <area title="Nasal cavity"/>
-        <!-- <area @click="linFkTo('Nasal cavity', 'Nose and pharynx')" @mouseover="update('Nose', 'Nasal cavity')" -->
-      <area @click="linkTo(&#39;Nasal cavity&#39;, &#39;Nose and pharynx&#39;)" @mouseover="update(&#39;Nose&#39;, &#39;Nasal cavity&#39;)" title="Nasal cavity" coords="2788,1397,2751,1344,2587,1334,2514,1340,2380,1519,2469,1519,2525,1553,2793,1564" shape="poly">
-<!--         <area @click="linkTo('Nasal cavity', 'Nose and pharynx')" @mouseover="update('Nose', 'Nasal cavity')"
+         <area @click="linkTo('Nasal cavity', 'Nose and pharynx')" @mouseover="update('Nose', 'Nasal cavity')"
           title="Nasal cavity" coords="2788,1397,2751,1344,2587,1334,2514,1340,2380,1519,2469,1519,2525,1553,2793,1564"
-          shape="poly"> -->
+          shape="poly"> 
         <area @click="linkTo('Nostrils', 'Nose and pharynx')" @mouseover="update('Nose', 'Nostrils')" title="Nostrils"
           coords="2492,1566,2413,1533,2413,1588" shape="poly">
         <!-- Pharynx -->
