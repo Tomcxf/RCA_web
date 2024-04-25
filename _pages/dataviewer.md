@@ -64,4 +64,10 @@ permalink: /dataviewer/
   </body>
 </html>  --> 
 
-<iframe src="../cirro/index.html" class="rounded-iframe" width="100%" height="1200" frameborder="0"></iframe>
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-xs-12">
+  <iframe src="../cirro/index.html" class="rounded-iframe" width="100%" height="1200" frameborder="0"></iframe>
+  </div>
+  </div>
+</div>
