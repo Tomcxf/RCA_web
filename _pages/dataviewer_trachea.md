@@ -2,7 +2,7 @@
 title: "Ribo centre - Data Viewer"
 layout: piclay
 excerpt: "Ribo centre -- Data Viewer Nose"
-permalink: /dataviewer_trachea/
+permalink: /dataviewer_Trachea/
 ---
 <div class="container-fluid">
   <div class="row">
