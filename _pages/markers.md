@@ -133,7 +133,7 @@ jQuery( document ).ready(function( $ ) {
 
 
 
-<div class="container">
+<!-- <div class="container">
 <table id="myTable" class="display table table-striped table-bordered" cellspacing="0" width="100%">
 <thead>
   <tr>
@@ -212,7 +212,7 @@ jQuery( document ).ready(function( $ ) {
   </tr>
 </tbody>
 </table>
-
+ -->
 
 
 
