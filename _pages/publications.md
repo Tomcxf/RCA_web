@@ -1,6 +1,6 @@
 ---
 title: "Ribo centre - Publications"
-layout: gridlay
+layout: piclay
 excerpt: "Ribo centre -- Publications."
 sitemap: false
 permalink: /publications/
@@ -27,7 +27,7 @@ permalink: /publications/
 		    cursor: pointer;
         }
 	</style>
-    <script type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script type="text/javascript"  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 	<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -37,7 +37,7 @@ permalink: /publications/
 	<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 	<script type="text/javascript">
 
-		$(document).ready(function() {
+ 		$(document).ready(function() {
 			$.noConflict();
 			$('#mytable').DataTable( {
 				dom: 'Bfrtip', 
@@ -46,8 +46,8 @@ permalink: /publications/
 				]
 				
 			} );
-		} );
-   </script>
+		} ); 
+</script> 
 
 <body>
     <div>

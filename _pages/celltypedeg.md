@@ -5,8 +5,10 @@ excerpt: "Ribo centre -- CellTypeDEG"
 permalink: /celltypedeg/
 ---
 <div class="container">
-<p>ATLAS</p>
-<div class="row">
+<b style="font-size: 24px; color: #BF5701">
+ATLAS
+</b>
+<div class="shadow p-3 mb-5 bg-white rounded row">
 
 <div class="col-lg-3 text-center">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Adult',this)">
@@ -14,8 +16,8 @@ permalink: /celltypedeg/
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-Nose and pharynx
+<b style="font-size: 24px; color: #BF5701">
+ADULT BRAIN
 </b>
 </p>
 </div>
@@ -27,8 +29,8 @@ Nose and pharynx
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Fetal.png'); return false">Airway</a>
+<b style="font-size: 24px; color: #BF5701">
+FETAL BRAIN
 </b>
 </p>
 </div>
@@ -39,8 +41,8 @@ Nose and pharynx
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Tumour.png'); return false">Lung</a>
+<b style="font-size: 24px; color: #BF5701">
+TUMOUR
 </b>
 </p>
 </div>
@@ -53,8 +55,8 @@ Nose and pharynx
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Fetal.png'); return false">Airway</a>
+<b style="font-size: 24px; color: #BF5701">
+ORGANOID
 </b>
 </p>
 </div>
@@ -89,19 +91,12 @@ Nose and pharynx
     height: 100%;
     object-fit: contain;
   }
-</style>
-<style>
     .photo-card {
-/*         width: 350px;
-        height: 350px; */
         border: 10px solid #ccc; 
         overflow: hidden;
         border-radius: 50%;
         position: relative;
         background-size: cover;
- /*        display: flex;  
-        justify-content: right; /* 水平居中对齐 */
-        /* align-items: right;  */
     }
     .photo-card:hover img {
         transform: scale(1.1);
@@ -120,20 +115,50 @@ Nose and pharynx
 
 
 
-
-
+<br>
 <div class="container">
-  <h2>Cell Type</h2>
-  <select id="selectBox1" onchange="handleSelectChange()"></select>
-  <button onclick="displaySelectedImage()">显示选择的照片</button>
+  <b style="font-size: 24px; color: #BF5701">EXPRESSIONS</b>
+  <div id="imageIdContainer"></div>
+  <b style="font-size: 24px; color: #BF5701">CELLTYPE</b>
+  <br>
+  <select id="selectBox1" onchange="handleSelectChange();displaySelectedImage()" selectedIndex="0"></select>
+  <!-- <button onclick="displaySelectedImage()">显示选择的照片</button> -->
+  <div class="image-container">
+  <img id="selectedImage" src="" alt="Selected Image">
+</div>
 </div>
 
-
-<!-- <div class="container">
-<div class="image-container"> -->
-<img id="selectedImage" src="" alt="Selected Image">
-<!-- </div> -->
-
+<!-- <div id="imageIdContainer"></div> -->
+<style>
+  /* 设置固定宽度 */
+  #selectBox1 {
+    width: 400px; /* 这里可以根据需要调整宽度 */
+  }
+  .image-container {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+  }
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .container {
+  /* background-color: #f0f0f0; */ /* 设置背景颜色为您想要的颜色值 */
+  box-shadow: 0 0 15px grey;
+  border-radius: 10px; /* 设置边框圆角的半径，可以根据需要进行调整 */
+  padding: 10px; /* 可选：添加内边距以增加内容与边框之间的间距 */
+}
+  .imageIdContainer{
+    box-shadow: 0 0 15px grey;
+    border-radius: 10px; 
+    padding: 10px; 
+  }
+</style>
 
 <script>
   var selectedImageId = null;
@@ -142,7 +167,10 @@ Nose and pharynx
   var selectBox1 = document.getElementById('selectBox1');
   var originalOrder = true;
   var clickedCard = null;
-
+  document.addEventListener('DOMContentLoaded', function() {
+    var adultButton = document.querySelector('.col-lg-3:nth-child(1) .card-clickable');
+    adultButton.click();
+  });
   function handleClick(imageId,card) {
     if (clickedCard !== null) {
     clickedCard.classList.remove("clicked");
@@ -157,13 +185,19 @@ Nose and pharynx
       .then(data => {
         var options = data[imageId];
         updateSelectBoxOptions('selectBox1', options);
+        document.getElementById('imageIdContainer').textContent = 'Atlas: ' + imageId;
       })
       .catch(error => {
         console.error('Error:', error);
       });
 
   }
-
+  document.addEventListener('DOMContentLoaded', function() {
+    var selectBox = document.getElementById('selectBox1');
+    selectBox.selectedIndex = 0;
+    handleSelectChange();
+    displaySelectedImage();
+  })
   function handleSelectChange() {
     var selectBox1 = document.getElementById('selectBox1');
     var option1 = selectBox1.options[selectBox1.selectedIndex].value;

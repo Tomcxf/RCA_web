@@ -4,32 +4,19 @@ layout: homelay
 excerpt: "Ribo centre -- Markers"
 permalink: /markers/
 ---
-<html>
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
 </head>
-<body>
-  <script type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<script type="text/javascript"  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-	<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-	<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-	<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
-	<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+<script type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript"  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 
-    <style>
-		th {
-        background-color: #0874c4;
-        background-color: #0874c4;
-        background-color: #0874c4;
-        color: rgba(255,255,255,0.9);
-		    cursor: pointer;
-        }
-	</style>
 
 <div class="container">
 <b style="font-size: 24px;">
@@ -118,108 +105,10 @@ VOLCANO PLOT
 <div id="csvTableContainer"></div>
 </div>
 </div>
-<script>
-jQuery( document ).ready(function( $ ) {
-        $(document).ready( function () {
-        $.noConflict();
-        var table = $('#mytable').DataTable();
-        });
-})
-</script>
 
 <div class="container">
 <p id="clickMessageContainer" style="display: block;">Please click</p>
 </div>
-
-
-
-<div class="container">
-<table id="myTable" class="display table table-striped table-bordered" cellspacing="0" width="100%">
-<thead>
-  <tr>
-    <th>Year</th>
-    <th>Author</th>
-    <th>Title</th>
-    <th>Ribozyme name</th>
-    <th>Description</th>
-    <th>Journal</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>2004</td>
-    <td>Adams, P. L., M. R. Stahley, A. B. Kosek, J. Wang and S. A. Strobel </td>
-    <td>Crystal structure of a self-splicing group I intron with both exons.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Crystal structure of <em>Azoarcus</em> group I intron with both exons</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/15175762"  target="_blank" ><b> Nature 430 (6995): 45-50.</b></a></td>
-  </tr>
-  <tr>
-    <td>1989</td>
-    <td>Flor, P. J., J. B. Flanegan and T. R. Cech </td>
-    <td>A conserved base pair within helix P4 of the <em>Tetrahymena</em> ribozyme helps to form the tertiary structure required for self-splicing.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>The conserved base pair C109-G212 in P4 contributes to the tertiary structure required for self-splicing</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/2684642"  target="_blank" ><b> EMBO J 8 (11): 3391-9.</b></a></td>
-  </tr>
-  <tr>
-    <td>1982</td>
-    <td>Kruger, K., P. J. Grabowski, A. J. Zaug, J. Sands, D. E. Gottschling and T. R. Cech </td>
-    <td>Self-splicing RNA: autoexcision and autocyclization of the ribosomal RNA intervening sequence of <em>Tetrahymena</em>.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Discovery</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/6297754"  target="_blank" ><b> Cell 31 (1): 147-57.</b></a></td>
-  </tr>
-  <tr>
-    <td>1982</td>
-    <td>Davies, R. W., R. B. Waring, J. A. Ray, T. A. Brown and C. Scazzocchio </td>
-    <td>Making ends meet: a model for RNA splicing in fungal mitochondria.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Determination of shared secondary structure</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/6757759"  target="_blank" ><b> Nature 300 (5894): 719-24.</b></a></td>
-  </tr>
-  <tr>
-    <td>1986</td>
-    <td>Zaug, A. J. and T. R. Cech </td>
-    <td>The intervening sequence RNA of <em>Tetrahymena</em> is an enzyme.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>The intervening sequence RNA of <em>Tetrahymena</em> is an enzyme</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/3941911"  target="_blank" ><b> Science 231 (4737): 470-5.</b></a></td>
-  </tr>
-  <tr>
-    <td>1988</td>
-    <td>Price, J. V. and T. R. Cech </td>
-    <td>Determinants of the 3' splice site for self-splicing of the <em>Tetrahymena</em> pre-rRNA.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>ωG is closely related to the choice of 3' splice site</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/3209068"  target="_blank" ><b> Genes Dev 2 (11): 1439-47.</b></a></td>
-  </tr>
-  <tr>
-    <td>1990</td>
-    <td>Michel, F. and E. Westhof </td>
-    <td>Modelling of the three-dimensional architecture of group I catalytic introns based on comparative sequence analysis.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>3D models of  group I intron based on comparative sequence analysis</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/2258934"  target="_blank" ><b> J Mol Biol 216 (3): 585-610.</b></a></td>
-  </tr>
-  <tr>
-    <td>1996</td>
-    <td>Cate, J. H., A. R. Gooding, E. Podell, K. Zhou, B. L. Golden, C. E. Kundrot, T. R. Cech and J. A. Doudna </td>
-    <td>Crystal structure of a group I ribozyme domain: principles of RNA packing.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Crystal structure of <em>Tetrahymena</em> P4-P6 domain</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/8781224"  target="_blank" ><b> Science 273 (5282): 1678-85.</b></a></td>
-  </tr>
-</tbody>
-</table>
-
-
-
-
-
-
-
-
 
 
 
@@ -251,14 +140,7 @@ jQuery( document ).ready(function( $ ) {
     overflow-y: auto;
   } */
 </style>
-<script type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript"  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
-<script type="text/javascript"  src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
 <script>
   var selectedImageId = null;
   var selectedOptions = [];
@@ -271,6 +153,7 @@ jQuery( document ).ready(function( $ ) {
     var adultButton = document.querySelector('.col-lg-3:nth-child(1) .card-clickable');
     adultButton.click();
   });
+
   function handleClick(imageId,card) {
     if (clickedCard !== null) {
     clickedCard.classList.remove("clicked");
@@ -279,6 +162,7 @@ jQuery( document ).ready(function( $ ) {
     clickedCard = card;
     selectedImageId = imageId;
     selectedOptions = [];
+
     fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/RegionDEG.json')
       .then(response => response.json())
       .then(data => {
@@ -288,6 +172,7 @@ jQuery( document ).ready(function( $ ) {
       .catch(error => {
         console.error('Error:', error);
       });
+
     fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/CellTypeDEG.json')
       .then(response => response.json())
       .then(data => {
@@ -298,13 +183,17 @@ jQuery( document ).ready(function( $ ) {
         console.error('Error:', error);
       });
   }
+
   function handleSelectChange() {
     var selectBox1 = document.getElementById('selectBox1');
     var selectBox2 = document.getElementById('selectBox2');
+
     var option1 = selectBox1.options[selectBox1.selectedIndex].value;
     var option2 = selectBox2.options[selectBox2.selectedIndex].value;
+
     selectedOptions = [option1, option2];
   }
+
 function displaySelectedImage() {
   if (selectedImageId !== null && selectedOptions.length === 2) {
     var imageName;
@@ -324,19 +213,16 @@ function displaySelectedImage() {
     console.log('Please select an image and options.');
   }
 }
+
 function sortTable(columnIndex) {
     // TODO: Add sorting logic based on the columnIndex
   }
-jQuery( document ).ready(function( $ ) {
-        $(document).ready( function () {
-        $.noConflict();
-        var table = $('#mytable').DataTable();
-        });
-})
+
 function displaySelectedTable() {
   if (selectedImageId !== null && selectedOptions.length === 2) {
     var tableName;
     var tablePath;
+
     if (selectedButton === 'A') {
       tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '_cell_type.csv';
       tablePath = 'https://data.braincellatlas.org/markersByRegion/' + tableName;
@@ -347,47 +233,45 @@ function displaySelectedTable() {
       console.log('Please select an image and options.');
       return; // 结束函数的执行
     }
+
     console.log('Table Path:', tablePath);
+
     var xhr = new XMLHttpRequest();
     xhr.open('GET', tablePath, true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var csvData = xhr.responseText;
         console.log('CSV Data:', csvData);
+
         var tableContainer = document.getElementById('csvTableContainer');
+
         // 解析 CSV 数据
         var rows = csvData.split('\n');
-        var tableHtml = '<table id="mytable" class="mytable table table-striped table-bordered" cellspacing="0" width="100%">';
+        var tableHtml = '<table id="mytable" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">';
         var headerHtml = `<thead>
         <tr>
-            <th>Name</th>
-            <th>Ligand</th>
-            <th>Description</th>
-            <th>Discovery</th>
-            <th>Rfam-name</th>
-            <th>Rfam-ID</th>
+            <th onclick="sortTable(0)">Name</th>
+            <th onclick="sortTable(1)">Ligand</th>
+            <th onclick="sortTable(2)">Description</th>
+            <th onclick="sortTable(3)">Discovery</th>
+            <th onclick="sortTable(4)">Rfam-name</th>
+            <th onclick="sortTable(5)">Rfam-ID</th>
         </tr>
         </thead>
         <tbody>`;
         tableHtml += headerHtml;
-        for (var i = 1; i < rows.length; i++) {
+        for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].split(',');
           tableHtml += '<tr>';
           for (var j = 0; j < cells.length; j++) {
-              tableHtml += '<td>' + cells[j] + '</td>';
+              tableHtml += '<td name="td' + j + '">' + cells[j] + '</td>';
           }
           tableHtml += '</tr>';
         }
-        tableHtml += `</tbody>
-        </table>`;
-        tableContainer.innerHTML = tableHtml;
+        tableHtml += '</table>';
+
         // 将表格插入到页面中
-/*         jQuery( document ).ready(function( $ ) {
-        $(document).ready( function () {
-        $.noConflict();
-        var table = $('#mytable').DataTable();
-        });
-}); */
+        tableContainer.innerHTML = tableHtml;
       }
     };
     xhr.send();
@@ -395,16 +279,13 @@ function displaySelectedTable() {
     console.log('Please select an image and options.');
   }
 }
-jQuery( document ).ready(function( $ ) {
-        $(document).ready( function () {
-        $.noConflict();
-        var table = $('#mytable').DataTable();
-        });
-})
-function updateSelectBoxOptions(selectBoxId, options) {
+
+
+  function updateSelectBoxOptions(selectBoxId, options) {
     var selectBox = document.getElementById(selectBoxId);
     selectBox.innerHTML = generateOptionsHtml(options);
   }
+
   function generateOptionsHtml(options) {
     var optionsHtml = '';
     for (var i = 0; i < options.length; i++) {
@@ -412,6 +293,7 @@ function updateSelectBoxOptions(selectBoxId, options) {
     }
     return optionsHtml;
   }
+
 document.addEventListener('DOMContentLoaded', function() {
     var buttonA = document.getElementById('buttonA');
     var buttonB = document.getElementById('buttonB');
@@ -442,7 +324,8 @@ document.addEventListener('DOMContentLoaded', function() {
       originalOrder = false;
       resetSelectBoxes();
     }
- }   
+ } 
+  
   function resetSelectBoxes() {
     if (originalOrder) {
       selectBox1.parentNode.insertBefore(selectBox1, selectBox2);
@@ -450,9 +333,11 @@ document.addEventListener('DOMContentLoaded', function() {
       selectBox2.parentNode.insertBefore(selectBox2, selectBox1);
     }
   }
+
   function toggleContent() {
     var contentContainer = document.getElementById('contentContainer');
     var clickMessageContainer = document.getElementById('clickMessageContainer');
+
     if (contentContainer.style.display === 'none') {
       contentContainer.style.display = 'block';
       clickMessageContainer.style.display = 'none';
@@ -463,13 +348,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
-</script>
-
-<script>
-  $(document).ready( function () {
-    $.noConflict();
-    var table = $('#mytable').DataTable();
-} );
 </script>
 
 <script>
@@ -528,4 +406,185 @@ function showImage0(photoName) {
         border-color: #EE993A;
     }
 </style>
-</body>
+
+<script>
+  var tables = [];
+    var currentSheet = 'sheet1';
+     $(document).ready(function() {
+    $.noConflict();
+    tables.push($('#cfttable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+
+    tables.push($('#rnadetable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+
+    tables.push($('#rnapretable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#smtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#eletable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+
+
+    
+    tables.push($('#amintable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#sugtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#tboxtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));
+    tables.push($('#othtable').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    }));    
+    // Hide the search box for DataTables
+      $('#cfttable_filter').css('display', 'none');
+      $('#rnadetable_filter').css('display', 'none');
+      $('#rnapretable_filter').css('display', 'none');
+       $('#smtable_filter').css('display', 'none');
+      $('#eletable_filter').css('display', 'none');
+      $('#amintable_filter').css('display', 'none');
+      $('#sugtable_filter').css('display', 'none');
+      $('#tboxtable_filter').css('display', 'none');
+      $('#othtable_filter').css('display', 'none');
+      
+      // Show the initial sheet (sheet1) and hide others
+    showSheet('sheet1');
+    hideAllSheetsExcept('sheet1');
+  });
+  function sortTable(columnIndex) {
+    // TODO: Add sorting logic based on the columnIndex
+  }
+function downloadExcel() {
+  var selectElement = document.getElementById('downloadOptions');
+  var selectedValue = selectElement.value;
+
+  // Check if a valid option was selected
+  if (selectedValue !== '') {
+    // Create a temporary link element with the download URL
+    var link = document.createElement('a');
+    link.href = selectedValue;
+    link.download = selectedValue.split('/').pop(); // Set the filename to the last part of the URL
+    document.body.appendChild(link);
+
+    // Trigger a click event on the link to start the download
+    link.click();
+
+    // Remove the link from the DOM
+    document.body.removeChild(link);
+  }
+}
+	
+	
+	function showSheet(sheetId) {
+    // Hide the current sheet
+    if (currentSheet) {
+        var currentSheetElement = document.getElementById(currentSheet);
+        currentSheetElement.style.display = 'none';
+    }
+
+    // Show the selected sheet
+    var sheet = document.getElementById(sheetId);
+    sheet.style.display = 'block';
+
+    // Update the current sheet
+    currentSheet = sheetId;
+
+    // Get all buttons
+    var buttons = document.querySelectorAll('.button');
+
+    // Remove clicked class from all buttons
+    buttons.forEach(function(btn) {
+        btn.classList.remove('clicked');
+    });
+
+    // Add clicked class to the clicked button using event.target
+    event.target.classList.add('clicked');
+}
+    function hideAllSheetsExcept(sheetId) {
+    var sheets = document.getElementsByClassName('sheet');
+    for (var i = 0; i < sheets.length; i++) {
+      var sheet = sheets[i];
+      if (sheet.id !== sheetId) {
+        sheet.style.display = 'none';
+      }
+    }
+    }
+    function showAllSheets() {
+      var sheets = document.getElementsByClassName('sheet');
+      for (var i = 0; i < sheets.length; i++) {
+        sheets[i].style.display = 'block';
+      }
+    }
+    function searchTables() {
+      var keyword = $('#searchBox').val().toLowerCase();
+      tables.forEach(function(table) {
+        table.search(keyword).draw();
+      });
+      // Filter the sheets based on search results
+    filterSheets();
+  }
+
+  function filterSheets() {
+    var keyword = $('#searchBox').val().toLowerCase();
+    var sheets = document.getElementsByClassName('sheet');
+
+    for (var i = 0; i < sheets.length; i++) {
+      var sheet = sheets[i];
+      var table = tables[i];
+
+      var displaySheet = false;
+
+      table.rows().eq(0).each(function(index) {
+        var row = table.row(index);
+        var rowData = row.data().join(' ').toLowerCase();
+        var display = rowData.includes(keyword) ? '' : 'none';
+        row.nodes().to$().css('display', display);
+
+        if (display !== 'none') {
+          displaySheet = true;
+        }
+      });
+
+      if (displaySheet) {
+        $('#' + sheet.id).show();
+      } else {
+        $('#' + sheet.id).hide();
+      }
+    }
+  }  
+  </script>      
