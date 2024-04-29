@@ -83,13 +83,11 @@ permalink: /
 <p>Chen, Xinyue & Huang, Yin & Huang, Ziliang & Xu, Lahong & Huang, Liangfeng & Ye, Mingli & You, Renke & Zhang, Xuegong & Miao, Zhichao*. (2023). Brain Cell Atlas: An Integrative Ensemble of Cell Transcriptomes Across Human Brain Regions. 10.21203/rs.3.rs-3221500/v1.</p>
 
 
-
-<!-- <script>
-    function handleClick(card) {
-        card.classList.toggle("clicked");
-    }
-</script> -->
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var adultButton = document.querySelector('.col-lg-4:nth-child(1) .card-clickable');
+    adultButton.click();
+  });
   function showImage0(photoName) {
     var photoElement = document.getElementById('photo');
     photoElement.src = photoName;
