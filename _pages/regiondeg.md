@@ -228,10 +228,4 @@ ORGANOID
     }
     return optionsHtml;
   }
-/*   document.addEventListener('DOMContentLoaded', function() {
-    var selectBox = document.getElementById('selectBox1');
-    selectBox.selectedIndex = 0;
-    handleSelectChange();
-    displaySelectedImage();
-  }); */
 </script>

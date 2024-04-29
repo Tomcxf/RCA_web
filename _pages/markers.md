@@ -100,8 +100,10 @@ ORGANOID
   <br/>
   <p id="sentence"></p>
   <br/>
-  <label for="sel1">单选下拉菜单:</label>
+<!--   <div>
+  <label for="sel1">单选下拉菜单:</label> -->
   <select id="selectBox1" onchange="handleSelectChange()"></select>
+<!--   </div> -->
   <select id="selectBox2" onchange="handleSelectChange()"></select>
   <button type="button" class="btn btn-primary btn-sm" onclick="toggleContent();displaySelectedImage();displaySelectedTable();">Markers</button>
 </div>
